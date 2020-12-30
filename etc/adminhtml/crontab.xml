@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Cron:etc/crontab.xsd">
+    <group id="default">
+        <job instance="Marlemiesz\Sellasist\Cron\ImportProduct" method="execute" name="marlemiesz_sellasist_cron_import_product">
+            <schedule>30 * * * *</schedule>
+        </job>
+    </group>
+</config>
