@@ -5,12 +5,15 @@
     "version": "0.0.1",
     "require": {
         "php": ">=7.2",
-        "magento/framework": "103.0.*"
+        "magento/framework": "103.0.*",
+        "marlemiesz/sellasistlib": "0.*"
     },
-    "repositores": {
-        "type": "composer",
-        "url": "https://repo.magento.com/"
-    },
+    "repositores": [
+        {
+            "type": "composer",
+            "url": "https://repo.magento.com/"
+        }
+    ],
     "minimum-stability": "stable",
     "autoload": {
         "files": [
