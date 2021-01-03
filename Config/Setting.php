@@ -5,7 +5,6 @@ namespace Marlemiesz\Sellasist\Config;
 
 
 use Magento\Framework\App\Helper\AbstractHelper;
-use Magento\Tests\NamingConvention\true\string;
 
 class Setting extends AbstractHelper
 {

@@ -6,6 +6,7 @@ namespace Marlemiesz\Sellasist\Cron;
 
 use Magento\Framework\App\ObjectManager;
 use Marlemiesz\Sellasist\Config\Setting;
+use Marlemiesz\SellasistLib\Client;
 
 class ImportProduct
 {
@@ -13,6 +14,10 @@ class ImportProduct
      * @var Setting
      */
     private $setting;
+    /**
+     * @var Client
+     */
+    private $client;
 
 
     /**
@@ -23,6 +28,7 @@ class ImportProduct
     {
 
         $this->setting = $setting;
+        $this->client = new Client($this->setting->getApiName(), $this->setting->getApiKey());
     }
 
     public function execute()
@@ -30,6 +36,10 @@ class ImportProduct
         if($this->isImportProductActive()){
             return false;
         }
+
+        $products = $this->client->getProducts();
+
+
 
 
     }
