@@ -47,6 +47,8 @@ class SaveProduct extends Save
         $product->setAttributeSetId(4);
         $product->setTypeId('simple');
         $product->setPrice($this->product->getPrice());
+        $product->setCost($this->product->getPriceBuy());
+        $product->setDescription($this->product->getDescription());
         $product->setStockData(
             [
                 'use_config_manage_stock' => 0,
@@ -59,9 +61,14 @@ class SaveProduct extends Save
         $product->setCustomAttribute('sellasist_id', $this->product->getId());
         $product->save();
 
-        foreach($this->product->getImages() as $image)
+        foreach($this->product->getImages() as $key=>$image)
         {
-            $this->importImageService->add($product, $image, false);
+            if($key == 0){
+                $this->importImageService->add($product, $image, false, ['image', 'small_image', 'thumbnail']);
+            }
+            else{
+                $this->importImageService->add($product, $image, false);
+            }
         }
         $product->save();
     }

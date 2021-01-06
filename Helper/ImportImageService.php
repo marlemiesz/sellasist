@@ -47,7 +47,7 @@ class ImportImageService
      * @return Product
      * @throws \Magento\Framework\Exception\LocalizedException
      */
-    public function add(Product $product, string $imageUrl, $hidden = false, $imageType = ['image', 'small_image', 'thumbnail'])
+    public function add(Product $product, string $imageUrl, $hidden = false, $imageType = [])
     {
         /** @var string $tmpDir */
         $tmpDir = $this->getMediaDirTmpDir();

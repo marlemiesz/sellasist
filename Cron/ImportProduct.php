@@ -56,7 +56,6 @@ class ImportProduct
 
             if(!$this->query->setValue($product->getId())->get()){
                 (new SaveProduct($this->client->getProduct($product->getId())))->save();
-                return;
             }
 
         }
